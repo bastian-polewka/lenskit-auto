@@ -1,0 +1,11 @@
+lkauto~=0.1.0
+pandas~=1.5.3
+numpy~=1.26.1
+configspace~=0.7.1
+lenskit~=0.14.2
+typing~=3.7.4.3
+implicit~=0.5.2
+smac~=1.4.0
+scipy~=1.11.3
+lightfm~=1.17
+setuptools~=68.0.0

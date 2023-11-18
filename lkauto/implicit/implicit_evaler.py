@@ -3,6 +3,7 @@ from typing import List, Any
 import numpy as np
 import pandas as pd
 from ConfigSpace import ConfigurationSpace
+from implicit.nearest_neighbours import bm25_weight
 from lenskit import topn, batch
 import logging
 

@@ -11,7 +11,9 @@ from lenskit.algorithms.funksvd import FunkSVD
 from lenskit.algorithms.item_knn import ItemItem
 from lenskit.algorithms.svd import BiasedSVD
 from lenskit.algorithms.user_knn import UserUser
-
+from lkauto.algorithms.implicit_wrapper import ALS
+from lkauto.algorithms.implicit_wrapper import BPR
+from lkauto.algorithms.implicit_wrapper import LMF
 
 def get_model_from_cs(cs: ConfigurationSpace,
                       feedback: str,
@@ -75,12 +77,12 @@ def get_model_from_cs(cs: ConfigurationSpace,
         # del config['ureg']
         # del config['ireg']
         model = ImplicitMF(rng_spec=random_state, **config)
-    # elif algo_name == 'AlternatingLeastSquares':
-    #     model = AlternatingLeastSquares(**config)
-    # elif algo_name == 'BayesianPersonalizedRanking':
-    #     model = BayesianPersonalizedRanking(**config)
-    # elif algo_name == 'LogisticMatrixFactorization':
-    #     model = LogisticMatrixFactorization(**config)
+    elif algo_name == 'ALS':
+        model = ALS(**config)
+    elif algo_name == 'BPR':
+        model = BPR(**config)
+    elif algo_name == 'LMF':
+        model = LMF(**config)
     else:
         raise ValueError("Unknown algorithm: {}".format(algo_name))
 
